@@ -1,0 +1,636 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*-----Jumbotron----*/
+
+.jumbotron {
+  /* background only for layout purposes*/
+  background-color: #222;
+  width:100%;
+  height: 100vh;
+  overflow:hidden;
+  position: relative;
+  cursor: default;
+}
+
+#bgvid{
+  position: absolute;
+  left: -25%;
+  bottom: -100px;
+  width: 150%;
+  height: auto;
+  z-index: 0;
+  background-image: image-url('feastIntroNew.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 1600px;
+  /*vertical-align: bottom;*/
+}
+
+.feastTitle {
+  font-family: 'MKfont', Helvetica, Arial, sans-serif;
+  position: absolute;
+  font-size: 200px;
+  width: 100%;
+  text-align: center;
+  line-height: 100vh;
+  z-index: 1;
+  color: white;
+}
+
+.poster {
+  width:100%;
+  /*min-height: 600px;*/
+  min-width: 800px;
+  margin-top: -30%;
+
+}
+
+
+/*---Index page Work bar---*/
+
+#workBar {
+  position: relative;
+  background: #222;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /*min-height: 180px;*/
+  overflow: hidden;
+
+}
+
+.scrollBox {
+  background: #222;
+  width: 100%;
+  overflow: hidden;
+  /*min-height:180px;*/
+}
+
+.workElement {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  overflow: hidden;
+}
+
+.homeThumb1 {
+  left: -40%;
+}
+
+
+.homeThumb2 {
+  left: -40%;
+}
+
+.homeThumb3 {
+  left: -40%;
+}
+
+.homeThumb4 {
+  left: -40%;
+}
+.homeThumb5 {
+  left: -40%;
+}
+.homeThumb6 {
+  left: -40%;
+}
+.homeThumb7 {
+  left: -40%;
+}
+
+.largeText {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  color: white;
+  font-weight: 100;
+  font-size: 17vw;
+  position: absolute;
+  display: none;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.visable {
+  display: inline;
+}
+/*------ABOUT/CONTACT-----*/
+
+#aboutBar {
+  height: auto;
+  width: 100%;
+  background: #222;
+
+}
+
+.aboutText {
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  color: #f8f8f8;
+  text-align: center;
+  h4 {
+    font-size: 50pt;
+    margin: 0 auto 5px auto;
+    padding-top: 50px;
+    font-weight: 100;
+    color: #f8f8f8;
+  }
+  h3{
+    margin-bottom: 20px;
+  }
+  hr {
+    width: 30%;
+    margin: 0 35%;
+    height: 1px;
+  }
+  p {
+    width: 525px;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-indent: 50px;
+    text-align: left;
+    padding-bottom: 50px;
+    line-height: 22pt;
+  }
+}
+
+
+/*=====Oblivion Rising=====*/
+
+#oblivionBar{
+  min-width: 800px;
+  padding: 20px auto;
+  width: 100%;
+  height: 300px;
+  background: #f8f8f8;
+  text-align: center;
+  background-image: image-url('oblivionBackground.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.oblivionWrapper{
+  height: 200px;
+  width: 100%;
+  background: rgba(255,255,255,0.5);
+  color: #222;
+  padding: 50px 0;
+  h5 {
+    font-family: 'MKfont', Helvetica, Arial, sans-serif;
+    font-size: 150px;
+  }
+  p {
+    color: #222;
+    font-weight: 300;
+  }
+}
+
+
+/*====CONTACT BOX========*/
+
+#contactBox {
+  width: 50%;
+  display: inline-block;
+  height: 300px;
+  ul {
+    padding-top: 20px;
+  }
+  li {
+    text-align: center;
+    padding: 15px 0;
+  }
+  img {
+    vertical-align: middle;
+    display: inline;
+    width: 24px;
+    padding: 4px;
+  }
+  p {
+    padding-right: 15px;
+  }
+}
+
+/*====SOCIAL BOX==========*/
+
+#socialBox {
+  width: 50%;
+  display: inline-block;
+  height: 300px;
+  vertical-align: top;
+  ul {
+   padding-top: 20px;
+  }
+  li {
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px 0;
+  }
+  p {
+    padding-left: 16px;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #999;
+  }
+  img {
+    vertical-align: middle;
+    display: inline;
+    width: 32px;
+  }
+}
+
+// =======PORTFOLIO======
+
+// =======Portfolio INDEX PAGE======
+
+.headerTitle{
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  h3 {
+  width: 100%;
+  color: white;
+  font-family: 'MKfont', Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 50px;
+  }
+}
+
+.workJumbotron{
+  width: 100%;
+  height: 450px;
+  background: #222;
+  position: relative;
+  overflow: hidden;
+  img {
+  width: 100%;
+  position: absolute;
+  bottom: -5%;
+  }
+}
+
+
+.activeSlide{
+  display: static;
+}
+
+.slide{
+  display: none;
+}
+
+.workCategories{
+  width: 100%;
+  height: 40px;
+  background: #222;
+}
+
+.catNav {
+  width: 100%;
+  min-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  li {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #f8f8f8;
+  }
+}
+
+
+.gallery{
+  width: 100%;
+}
+
+.thumbnail{
+  display: inline-block;
+  float: left;
+  width: 25%;
+  img {
+  width: 100%;
+  vertical-align: top;
+  }
+  img:hover {
+  background-color: #000;
+  opacity: 0.5;
+  }
+}
+
+//====== PROJECT's PAGE=======
+
+.projectJumbotron{
+  display: relative;
+  width:100%;
+  max-height: 600px;
+  overflow: hidden;
+  background-color: #222;
+  img{
+  display: absolute;
+  bottom: 0;
+  width: 100%;
+  }
+  frame{
+  width: 100%;
+  height: 600px;
+  }
+}
+
+.projectDescription{
+  width: 100%;
+  margin: 40px auto;
+}
+
+.projectTitle{
+  margin: 0 auto;
+  width: 400px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.projectText{
+  width: 600px;
+  color: #999;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-indent: 50px;
+  font-size: 20pt;
+}
+
+.projectThreeDetails {
+  width: 100%;
+  img{
+  width: 33.33%
+  }
+}
+
+
+.projectInfo {
+  width: 100%;
+  margin: 40px 50px;
+  h3{
+  display: inline-block; 
+  }
+  h2{
+  padding: 20px 0;
+  }
+}
+
+.projectNav{
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  p {
+  font-size: 14pt;
+  color: #999;
+  margin: 0 auto;
+  width: 400px;
+  text-align: center;
+  padding-bottom: 10px;
+  }
+  a {
+  color: #999;
+  text-decoration: none;
+  }
+  a:hover {
+  text-decoration: underline;
+  }
+}
+
+
+/*==========================*/
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+// ======MEDIA QUERIES =====
+
+
+
+/*Need to eventually adjust all "width-min" instead to adjust to this*/
+@media all and (max-width : 800px){
+  #navWindow{
+    width: 400px;
+    height: auto;
+    position: fixed;
+    z-index: 2;
+    left: -100%;
+  }
+  .navText{
+    width: 100%;
+    /*text-align: left;*/
+    position: fixed;
+    background: rgba(0,0,0,0.75);
+  }
+
+  .navText li{
+    width: 100%;
+    display: initial;
+    text-align: center;
+    padding: 0;
+    /*vertical-align: middle;*/
+  }
+}
+/*@media only screen and (max-device-width : 1200px){*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+  #bodyColumn{
+    min-width: 0;
+  }
+
+  /*Navigation Window*/
+  #navButton{
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+  }
+
+  #navWindow{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 2;
+    left: -100%;
+  }
+
+  .navText{
+    width: 100%;
+    height: 600px;
+    min-width: 0;
+    text-align: left;
+    position: fixed;
+    background: rgba(0,0,0,0.75);
+  }
+
+  .navText li{
+    width: 100%;
+    display: initial;
+    text-align: center;
+    padding: 0;
+    /*vertical-align: middle;*/
+  }
+  
+  /*Jumbotron*/
+
+  .jumbotron{ 
+    background: #222;
+    background-size: cover;
+    height:600px;
+  }
+  
+  .jumbotron img{
+    position: absolute;
+    width: 150%;
+    left:-25%;
+  }
+
+  video { 
+    display: none; 
+  }
+
+  .feastTitle {
+    font-family: 'MKfont', Helvetica, Arial, sans-serif;
+    position: absolute;
+    font-size: 300px;
+    width: 100%;
+    text-align: center;
+    line-height: 600px;
+    z-index: 1;
+    color: white;
+  }
+
+  .poster {
+    width:100%;
+    min-width: 0;
+    margin-top: 0;
+  }
+
+  .largeText{
+    display: initial;
+  }
+
+  .aboutText {
+    width: 100%;
+    margin: 0;
+  }
+
+  .aboutText h4{
+    font-size: 100pt;
+  }
+
+  h3{
+    font-size: 50pt;
+    font-weight: 100;
+    color: #f8f8f8;
+  }
+
+  .aboutText p{
+    width: 90%;
+    text-indent: 50px;
+    font-size: 40pt;
+    line-height: 40pt;
+  }
+
+  .catNav {
+  width: 100%;
+  min-width: 0;
+  }
+
+  .footerText{
+  width: 100%;
+  min-width: 0;
+  }
+/*OBLIVION BAR*/
+
+  #oblivionBar{
+  min-width: 0;
+  height: 600px;
+  }
+
+  .oblivionWrapper{
+    width: 100%;
+    padding: 0;
+    height: 600px;
+  } 
+  .oblivionWrapper h5{
+    font-size: 300px;
+    height: 600px;
+  }
+
+  .oblivionWrapper p{
+    display: none;
+  }
+
+  #contactBox {
+    width: 50%;
+    display: inline-block;
+    height: 600px;
+  }
+
+  #contactBox ul{
+    padding-top: 40px;
+  }
+
+  #contactBox li{
+    text-align: center;
+    padding: 30px 0;
+  }
+  #contactBox p{
+    font-size: 40pt;
+  }
+
+  #contactBox li a{
+    text-decoration: none;
+    color: #999;
+  }
+
+
+  /*====SOCIAL BOX==========*/
+
+  #socialBox {
+    width: 50%;
+    display: inline-block;
+    height: 600px;
+    vertical-align: top;
+  }
+
+  #socialBox ul{
+    padding-top: 40px;
+  }
+
+  #socialBox li{
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  #socialBox p{
+    font-size: 40pt;
+  }
+
+  #socialBox a:hover{
+    text-decoration: underline;
+    color: #999;
+  }
+
+}
+
+

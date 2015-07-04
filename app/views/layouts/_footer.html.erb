@@ -1,0 +1,16 @@
+<div id="footer">
+  <ul class="footerText">
+    <li class='footerLink' ><%= link_to "Home", root_path %></li>
+    <li class='footerLink' ><%= link_to "Portfolio", portfolio_path %></li>
+    <!-- <li><a href="feastWork.html">Portfolio</a></li> -->
+    <li class='footerLink' ><a href="about.html">About</a></li>
+    <li class='footerLink' ><a href="contact.html">Contact</a></li>
+    <li class='footerLink' ><a href="#">Blog</a></li>
+    <% if current_user %>
+      <li class='footerLink' ><%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li>
+    <% else %>
+      <li class='footerLink' ><%= link_to "Sign In", new_user_session_path %></li>
+      <li class='footerLink' ><%= link_to "Register", new_user_registration_path %></li>
+    <% end %>
+  </ul>
+</div>

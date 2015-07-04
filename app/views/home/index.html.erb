@@ -1,0 +1,53 @@
+<div class="jumbotron">
+  <h1 class="feastTitle">FEAST</h1>
+  <%= video_tag('feastIntroNew.mp4', type: 'video/mp4', poster: 'feastIntroNew.jpg', id: 'bgvid', loop: true, autoplay: true) %>
+  <%= image_tag("feastIntroNew.jpg", class: "poster") %>
+</div>
+<div id="workBar">
+  <a href="/portfolio">
+    <div class="largeText">
+      <h5>PORTFOLIO</h5>
+    </div>
+  </a>
+  <!-- thumbnails of work as a preview -->
+  <div class="scrollBox">
+      <%= image_tag("preview2.jpg", class: "workElement homeThumb5") %><!--
+    --><%= image_tag("preview3.jpg", class: "workElement homeThumb6") %><!--
+    --><%= image_tag("preview4.jpg", class: "workElement homeThumb7") %><!--
+    --><%= image_tag("preview1.jpg", class: "workElement homeThumb1") %><!--
+    --><%= image_tag("preview2.jpg", class: "workElement homeThumb2") %><!--
+    --><%= image_tag("preview3.jpg", class: "workElement homeThumb3") %><!--
+    --><%= image_tag("preview4.jpg", class: "workElement homeThumb4") %>
+  </div>e
+</div>
+<div id="aboutBar">
+  <div class="aboutText">
+    <h4>FEAST Inc.</h4> 
+    <h3>Practical Effects & Props</h3>
+    <hr>
+    <p>FEAST Inc. specializes in fabrication and implementation of beautiful screen-ready practical effects. With over twenty combined years of experience in movie, television, and stage prop creation, FEAST is able to make any thing you can imagine come to life.</p>
+  </div>  
+</div>
+<div id="oblivionBar">
+  <a href="https://www.facebook.com/pages/Oblivion-Rising-Scum-Suckers-V/258504580976031?fref=ts">
+  <div class="oblivionWrapper">
+    <h5>Oblivion Rising</h5>
+    <p>Stay up to date with the latest Oblivion Rising news and content.</p>
+  </div>
+  </a>
+</div>
+<div id="contactBox">
+  <ul>
+    <li><h3>Contact</h3></li>
+    <li class="contactLink"><p><%= image_tag("social/mail-6.png", class: "") %>info@feasteffects.com</p></li>
+    <li class="contactLink"><p><%= image_tag("social/phone-1.png", class: "") %>908.666.6969</p></li>
+  </ul>
+</div><!--
+--><div id="socialBox">
+  <ul>
+    <li><h3>Connect</h3></li>
+    <li class="socialLink"><a href="https://vimeo.com/feasteffects"><p>Vimeo<%= image_tag("social/vimeo-48.png", class: "") %></p></a></li>
+    <li class="socialLink"><a href="https://www.facebook.com/pages/Oblivion-Rising-Scum-Suckers-V/258504580976031?fref=ts"><p>Facebook<%= image_tag("social/facebook-48.png", class: "") %></p></a></li>
+    <li class="socialLink"><p>Twitter<%= image_tag("social/twitter-48.png", class: "") %></p></li>
+  </ul>
+</div>
