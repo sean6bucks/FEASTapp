@@ -1,3 +1,4 @@
+<div class='col-sm-8'>
 <%= simple_form_for @category, html: {multipart: true} do |f| %>
 
   <% if @category.errors.any? %>
@@ -21,3 +22,4 @@
   <%= f.button :submit %>
 
 <% end %>
+</div>

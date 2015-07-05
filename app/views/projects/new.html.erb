@@ -1,3 +1,4 @@
+<div class='col-sm-8'>
 <%= simple_form_for @project, html: {multipart: true} do |f| %>
 
   <% if @project.errors.any? %>
@@ -18,6 +19,7 @@
 
   <%= f.input :name, placeholder: 'Project Name' %>
   <%= f.input :displayname, hint: 'Cannot have Uppercase Letters or Spaces',  placeholder: 'projectname'%>
+  <%= f.input :thumbnail, label: 'Thumbnail Image', hint: 'thumbnail should be 400 x 400px', as: :file %>
   <%= f.input :client, placeholder: 'Client\'s Name'%>
   <%= f.input :proccesses, placeholder: 'Sculpting, Life Casting, etc.'%>
   <%= f.input :description, placeholder: 'Max. 500 characters', input_html: {maxlength: 500, rows: 5}, as: :text %>
@@ -28,3 +30,4 @@
   <%= f.button :submit %>
 
 <% end %>
+</div>
