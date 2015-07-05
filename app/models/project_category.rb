@@ -1,4 +1,4 @@
 class ProjectCategory < ActiveRecord::Base
-  has_many :projects
-  has_many :categories
+  belongs_to :project
+  belongs_to :category
 end

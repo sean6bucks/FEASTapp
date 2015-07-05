@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :destory]
   root 'home#index'
   resources :projects
-  resources :categories, only: [:new, :create, :destroy]
-  get '/portfolio' => 'home#portfolio'
+  resources :categories
+  get '/work' => 'home#work'
+  get '/work/:displayname' => 'home#show'
+  get '/admin' => 'admin#index'
 end

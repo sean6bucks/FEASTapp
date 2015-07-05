@@ -1,0 +1,34 @@
+<div id="bodyWrapper" class="col-md-10">
+  <div class='row'>
+    <h1 class='projectsTitle'>Categories</h1>
+  </div>
+  <div class='row'>
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Projects</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each do |cat| %>
+            <tr>
+            <td><%= cat.name %></td>
+            <td>
+              <% cat.projects.each do |proj|  %>
+                <ul>
+                  <li> <%= link_to proj.name, project_path(proj) %> </li>
+                </ul>
+              <% end %>
+            </td>
+            <td><%= link_to "Delete", category_path(cat), method: :delete, data: {confirm: "Please Make sure all projects belong to at least one other Category before deleting. Continue with Delete?"} %></td>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>  
+       <%= link_to "New Category", new_category_path, method: :get, class: 'btn btn-primary' %>  
+    </div>
+  </div>
+</div>

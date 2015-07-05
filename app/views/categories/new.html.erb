@@ -1,0 +1,23 @@
+<%= simple_form_for @category, html: {multipart: true} do |f| %>
+
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@category.errors.count, "error") %> prevented this category from being created
+      </h2>
+
+      <ul>
+        <% @category.errors.full_messages.each do |error| %>
+          <li>
+            <%= error %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :name %>
+  
+  <%= f.button :submit %>
+
+<% end %>

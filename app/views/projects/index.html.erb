@@ -1,0 +1,31 @@
+<div id="bodyWrapper" class="col-md-10">
+  <div class='row'>
+    <h1 class='projectsTitle'>Projects</h1>
+  </div>
+  <div class='row'>
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Client</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <%= link_to "New Project", new_project_path, method: :get, class: 'btn btn-primary' %>
+          </tr>
+          <% @projects.each do |proj| %>
+            <tr>
+            <td><%= link_to proj.name, project_path(proj) %><br>
+                (/<%= proj.displayname %>) </td>
+            <td><%= proj.client %></td>
+            <td><%= link_to "Edit Project", edit_project_path(proj) %></td>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>    
+    </div>
+  </div>
+</div>

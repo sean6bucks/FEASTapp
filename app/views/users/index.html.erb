@@ -20,6 +20,9 @@
             <td><%= link_to "Delete", user_path(user), method: :delete, data: {confirm: "Are you sure you want to delete this user?"} %></td>
               </tr>
           <% end %>
+          <tr>
+            <%= link_to "New User", new_user_registration_path, method: :get, class: 'btn btn-primary' %>
+          </tr>
         </tbody>
       </table>    
     </div>
