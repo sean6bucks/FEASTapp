@@ -20,7 +20,7 @@
           <% @projects.each do |proj| %>
             <tr>
               <% if proj.thumbnail %>
-              <td><%= image_tag proj.thumbnail.url(:thumb) %></td>
+              <td><%= image_tag proj.thumbnail.url(:preview) %></td>
               <% else %>
               <td></td>
               <%end%>

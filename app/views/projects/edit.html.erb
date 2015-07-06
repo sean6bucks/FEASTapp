@@ -17,16 +17,16 @@
     </div>
   <% end %>
 
-  <%= f.input :name, placeholder: 'Project Name' %>
-  <%= f.input :displayname, hint: 'Cannot have Uppercase Letters or Spaces',  placeholder: 'projectname'%>
-  <%= f.input :thumbnail, label: 'Thumbnail Image', hint: 'thumbnail should be 400 x 400px', as: :file %>
+  <%= f.input :name, placeholder: 'Project Name', value: :name %>
+  <%= f.input :displayname, hint: 'Cannot have Uppercase Letters or Spaces',  placeholder: 'projectname', value: :displayname%>
+  <%= f.input :thumbnail, label: 'Thumbnail Image', hint: 'thumbnail should be 400 x 400px', as: :file, value: :thumbnail %>
   <%= f.input :jumbotron, label: 'Jumbotron Image', hint: 'Jumbotron image should be 1200 x 720', as: :file %>
   <%= f.input :half_detail1, label: 'First Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
   <%= f.input :half_detail2, label: 'Second Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
-  <%= f.input :client, placeholder: 'Client\'s Name'%>
-  <%= f.input :proccesses, placeholder: 'Sculpting, Life Casting, etc.'%>
-  <%= f.input :description, placeholder: 'Max. 500 characters', input_html: {maxlength: 500, rows: 5}, as: :text %>
-  <%= f.input :is_published, inline_label: 'Published', hint: 'Project will not appear on portfolio page until PUBLISHED',  placeholder: '/projectname' %>
+  <%= f.input :client, placeholder: 'Client\'s Name', value: :client%>
+  <%= f.input :proccesses, placeholder: 'Sculpting, Life Casting, etc.', value: :proccesses %>
+  <%= f.input :description, placeholder: 'Max. 500 characters', input_html: {maxlength: 500, rows: 5}, as: :text, value: :description %>
+  <%= f.input :is_published, inline_label: 'Published', hint: 'Project will not appear on portfolio page until PUBLISHED',  placeholder: '/projectname', value: :is_published %>
 
   <%= f.association :categories, as: :check_boxes, placeholder: 'Used for sorting projects on main porfolio page.' %>
   

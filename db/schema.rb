@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705195654) do
+ActiveRecord::Schema.define(version: 20150705230038) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20150705195654) do
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "client"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "proccesses"
     t.string   "description"
     t.boolean  "is_published"
@@ -39,6 +39,42 @@ ActiveRecord::Schema.define(version: 20150705195654) do
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
+    t.string   "jumbotron_file_name"
+    t.string   "jumbotron_content_type"
+    t.integer  "jumbotron_file_size"
+    t.datetime "jumbotron_updated_at"
+    t.string   "jumbotron_detail_file_name"
+    t.string   "jumbotron_detail_content_type"
+    t.integer  "jumbotron_detail_file_size"
+    t.datetime "jumbotron_detail_updated_at"
+    t.string   "half_detail1_file_name"
+    t.string   "half_detail1_content_type"
+    t.integer  "half_detail1_file_size"
+    t.datetime "half_detail1_updated_at"
+    t.string   "half_detail2_file_name"
+    t.string   "half_detail2_content_type"
+    t.integer  "half_detail2_file_size"
+    t.datetime "half_detail2_updated_at"
+    t.string   "half_detail_square1_file_name"
+    t.string   "half_detail_square1_content_type"
+    t.integer  "half_detail_square1_file_size"
+    t.datetime "half_detail_square1_updated_at"
+    t.string   "half_detail_square2_file_name"
+    t.string   "half_detail_square2_content_type"
+    t.integer  "half_detail_square2_file_size"
+    t.datetime "half_detail_square2_updated_at"
+    t.string   "thirds_detail1_file_name"
+    t.string   "thirds_detail1_content_type"
+    t.integer  "thirds_detail1_file_size"
+    t.datetime "thirds_detail1_updated_at"
+    t.string   "thirds_detail2_file_name"
+    t.string   "thirds_detail2_content_type"
+    t.integer  "thirds_detail2_file_size"
+    t.datetime "thirds_detail2_updated_at"
+    t.string   "thirds_detail3_file_name"
+    t.string   "thirds_detail3_content_type"
+    t.integer  "thirds_detail3_file_size"
+    t.datetime "thirds_detail3_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

@@ -23,6 +23,42 @@ Things you may want to cover:
 
 * ...
 
+Image Guide:
+
+--All Images RGB 72dpi--
+
+###thumbnail:
+
+(400 x 400)
+
+To appear in the portfolio gallery
+
+###jumbotron:
+
+(1200 x 720)
+
+This is the large horizontal banner image that will appear in the slide show as well as at the top of each piece's page. In addition any largly horizontal detail/additional photo should be these demensions aswell
+
+
+###half_detail & half_detail_square:
+
+vertical: (600 x 720)
+square: (600 x 600)
+
+So if there are two detail photos and they aren't going to be jumbotron dimensions they should both be one of these dimensions (depending if you need it more square or more vertical
+
+###thirds_detail:
+
+(400 x 600)
+
+If there is going to be 3 detail images they should go vertical in this dimension so they can line up nicely on the page.
+
+###scroll_image:
+
+(600 x 338)
+
+So the final dimension I'll need is for the scrolling gallery bar on the home page. Don't need this size for every piece, only 4 are wanted to be put on the homepage
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

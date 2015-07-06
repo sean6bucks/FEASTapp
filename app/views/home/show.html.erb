@@ -1,3 +1,4 @@
+<%= render '/home/navigation' %>
 <%if @project == nil %>
   <div class="projectDescription">
     <h3 class="projectTitle">
@@ -9,21 +10,19 @@
   </div>
 <% else %> 
   <div class='projectJumbotron'>
-    <img src="images/work/alexJumbotron.jpg" alt="#"/>
+    <%= image_tag @project.jumbotron.url(:jumbotron) %>
   </div>
   <div class="projectDescription">
     <h3 class="projectTitle">
       <%= @project.name %>
     </h3>
     <p class="projectText">
-      Glorium Ipdana sfj wugp word glorp to the ate sixteen flop on the other side of the wall, so then we crushed and clorped and poured molding for a movie cat stink and sfd gow gqjjsh lqplcjb fkgqhoqg dkfkaghaigr bjdfihqgoqlsgk.
+      <%= @project.description %>
     </p>
   </div>
   <!-- layout for 3 vertical detail pics -->
   <div class="projectThreeDetails">
-       <img  src="images/work/alexDetail2.jpg" alt="#"/><!--
-    --><img  src="images/work/alexDetail1.jpg" alt="#"/><!--
-    --><img  src="images/work/alexDetail3.jpg" alt="#"/>
+       
   </div>
   <!-- for 2 half width detail shots
   <div class ="projectTwoDetails">
@@ -32,11 +31,13 @@
   </div>-->
   <div class="projectInfo">
     <h3>PROJECT</h3>
-    <h2>#Project name</hh2>
-    <h3>CLIENT</h4>
-    <h2>#Client Name</h2>
+    <h2><%= @project.name %></h2>
+    <% if @project.client != '' %>
+      <h3>CLIENT</h4>
+      <h2><%= @project.client %></h2>
+    <% end %>
     <h3>PROCESSES</h3>
-    <h2>#Fabrication, Molding, Etc.</h2>
+    <h2><%= @project.proccesses %></h2>
   </div>
   <div class="projectNav">
     <p>
