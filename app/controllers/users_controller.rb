@@ -10,8 +10,10 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find_by_id(params[:id])
     @user.destroy
-
-    flash[:alert] = "User was deleted."
-    redirect_to users_path
+    
+    if @user.destroy
+      flash[:alert] = "User was deleted."
+      redirect_to users_path
+    end
   end
 end

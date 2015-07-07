@@ -21,14 +21,46 @@
   <%= f.input :displayname, hint: 'Cannot have Uppercase Letters or Spaces',  placeholder: 'projectname'%>
   <%= f.input :thumbnail, label: 'Thumbnail Image', hint: 'thumbnail should be 400 x 400px', as: :file %>
   <%= f.input :jumbotron, label: 'Jumbotron Image', hint: 'Jumbotron image should be 1200 x 720', as: :file %>
-  <%= f.input :half_detail1, label: 'First Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
-  <%= f.input :half_detail2, label: 'Second Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
+  <br>
+  <label>Add Detail Images:</label>
+  <br>
+  <input type="checkbox" name="choice-jumbo" id="choice-jumbotron-details">
+  <label for="choice-jumbotron-details">Jumbotron</label>
+  <div class="reveal-jumbo-active">
+    <%= f.input :jumbotron_detail, label: 'Jumbotron Detail Image', hint: 'Jumbotron image should be 1200 x 720', as: :file %>
+     <br><br><br><br>
+  </div>
+  <input type="checkbox" name="choice-half" id="choice-half-details">
+  <label for="choice-half-details">Half Width</label>
+  <div class="reveal-half-active">
+    <%= f.input :half_detail1, label: 'First Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
+    <%= f.input :half_detail2, label: 'Second Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
+     <br><br><br><br>
+  </div>
+  <input type="checkbox" name="choice-half-square" id="choice-half-square-details">
+  <label for="choice-half-square-details">Half Width Square</label>
+  <div class="reveal-half-square-active">
+    <%= f.input :half_detail_square1, label: 'First Half Width Square Detail Images', hint: 'Detail images should be 600 x 600px', as: :file %>
+    <%= f.input :half_detail_square2, label: 'Second Half Width Square Detail Images', hint: 'Detail images should be 600 x 600px', as: :file %>
+    <br><br><br><br>
+  </div>
+
+  <input type="checkbox" name="choice-thirds" id="choice-thirds-details">
+  <label for="choice-thirds-details">Thirds Width</label>
+  <div class="reveal-thirds-active">
+    <%= f.input :thirds_detail1, label: 'First 1/3 Width Detail Images', hint: 'Detail images should be 400 x 600px', as: :file %>
+    <%= f.input :thirds_detail2, label: 'Second 1/3 Width Detail Images', hint: 'Detail images should be 400 x 600px', as: :file %>
+    <%= f.input :thirds_detail3, label: 'Third 1/3 Width Detail Images', hint: 'Detail images should be 400 x 600px', as: :file %>
+     <br><br><br><br>
+  </div>
+  <br>
   <%= f.input :client, placeholder: 'Client\'s Name'%>
   <%= f.input :proccesses, placeholder: 'Sculpting, Life Casting, etc.'%>
   <%= f.input :description, placeholder: 'Max. 500 characters', input_html: {maxlength: 500, rows: 5}, as: :text %>
-  <%= f.input :is_published, inline_label: 'Published', hint: 'Project will not appear on portfolio page until PUBLISHED',  placeholder: '/projectname' %>
-
   <%= f.association :categories, as: :check_boxes, placeholder: 'Used for sorting projects on main porfolio page.' %>
+  <label> Options </label>
+  <%= f.input :is_published, inline_label: 'Published', hint: 'Project will not appear on portfolio page until PUBLISHED' %>
+  <%= f.input :is_slide, inline_label: 'Preview Slide', hint: 'If checked, image will appear on scrolling portfolio preview AND large slideshow' %>
   
   <%= f.button :submit %>
 

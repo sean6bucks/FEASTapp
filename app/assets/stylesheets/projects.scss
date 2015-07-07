@@ -13,3 +13,18 @@
 .help-block {
   font-size: 14px;
 }
+
+.reveal-jumbo-active, .reveal-half-active, .reveal-half-square-active, .reveal-thirds-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  transition: 0.5s;
+  input[type="checkbox"]:checked ~ & {
+    opacity: 1;
+    max-height: 100px;
+    overflow: visible;
+    padding: 10px 20px;
+    transform: scale(1);
+  }
+}

@@ -3,13 +3,14 @@
     <h1 class='projectsTitle'>Projects</h1>
   </div>
   <div class='row'>
-    <div class="col-md-6">
+    <div class="col-md-10">
       <table class="table">
         <thead>
           <tr>
             <th></th>
             <th>Name</th>
             <th>Client</th>
+            <th>Published</th>
             <th>Options</th>
           </tr>
         </thead>
@@ -20,14 +21,33 @@
           <% @projects.each do |proj| %>
             <tr>
               <% if proj.thumbnail %>
-              <td><%= image_tag proj.thumbnail.url(:preview) %></td>
+                <td>
+                  <%= image_tag proj.thumbnail.url(:preview) %>
+                </td>
               <% else %>
-              <td></td>
+                <td></td>
               <%end%>
-              <td><%= link_to proj.name, project_path(proj) %><br>
-                  (/<%= proj.displayname %>) </td>
-              <td><%= proj.client %></td>
-              <td><%= link_to "Edit Project", edit_project_path(proj) %></td>
+              <td>
+                <%= link_to proj.name, project_path(proj) %>
+                <br>
+                  (/<%= proj.displayname %>) 
+                </td>
+              <td>
+                <%= proj.client %>
+              </td>
+              <% if proj.is_published %>
+                <td>
+                  <p style="color:green">&#10004;</p>
+                </td>
+              <% else %>
+                <td>
+                  <p style="color:red">&#10006;</p>
+                </td>
+              <%end%>
+              <td>
+                <%= link_to "Edit", edit_project_path(proj) %> | 
+                <%= link_to "Delete", edit_user_registration_path(proj), method: :delete,  data: {confirm: "Are you sure you want to delete this project?"} %>
+              </td>
             </tr>
           <% end %>
         </tbody>

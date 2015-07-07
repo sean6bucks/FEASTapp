@@ -1,57 +1,28 @@
 <%= render '/home/navigation' %>
 <div class="workJumbotron">
-  <a class="activeSlide" href="iceHead.html">
-    <%= image_tag "work/iceJumbotron.jpg" %>
-  </a>
-  <a class="slide" href="alexHead.html">
-    <%= image_tag "work/alexJumbotron.jpg" %>
-  </a>
-  <a class="slide" href="demonTeeth.html">
-    <%= image_tag "work/demonJumbotron.jpg" %>
-  </a>
-  <a class="slide" href="corpse.html">
-    <%= image_tag "work/corpseJumbotron.jpg" %>
-  </a>
-  <a class="slide" href="iceHead.html">
-    <%= image_tag "work/iceJumbotron.jpg" %>
-  </a>
+  <% if @first_slide %>
+    <%= content_tag(:a, tag("img", src: @first_slide.jumbotron.url), href: work_path(@first_slide.displayname), class: ["activeSlide"]) %>
+  <% end %>
+  <% @projects.each do |slide| %>
+    <% if slide.is_slide %>
+      <%= content_tag(:a, tag("img", src: slide.jumbotron.url), href: work_path(slide.displayname), class: ["slide"]) %>
+    <% end %>
+  <% end %>
 </div>
 <div class="workCategories">
   <ul class="catNav">
     <li id="allCat">All</li>
-    <li id="makeupCat">Makeup</li>
-    <li id="fabCat">Fabrication</li>
-    <li id="videoCat">Video</li>
-    <li id="persCat">Personal</li>
+    <% @categories.each do |cat| %>
+      <%= content_tag(:li, cat.name, id: [cat.name.to_s]) %>
+    <% end %>
   </ul>
-</div>
+</div> 
 <div class="gallery">
-  <div class="thumbnail allCat makeupCat">
-    <a href="alexHead.html"><%= image_tag "thumbs/alexThumb.jpg" %></a>
-  </div><!--
---><div class="thumbnail allCat fabCat">
-    <a href="corpse.html">
-    <%= image_tag "thumbs/corpseThumb.jpg" %>
-   </a>
-  </div><!--
---><div class="thumbnail allCat videoCat persCat">
-    <a href="cerealKiller.html">
-    <%= image_tag "thumbs/cerealThumb.jpg" %>
-    </a>
-  </div><!--
---><div class="thumbnail allCat fabCat">
-    <%= image_tag "thumbs/iceThumb.jpg" %>
-  </div><!--
---><div class="thumbnail allCat makeupCat persCat">
-    <%= image_tag "thumbs/demonThumb.jpg" %>
-  </div><!--
---><div class="thumbnail allCat fabCat persCat">
-    <%= image_tag "thumbs/bodyThumb.jpg" %>
-  </div><!--
---><div class="thumbnail allCat makeupCat">
-    <%= image_tag "thumbs/brainThumb.jpg" %>
-  </div><!--
---><div class="thumbnail allCat fabCat makeupCat">
-    <%= image_tag "squaresample3.png" %>
-  </div>
+  <% @projects.each do |project| %>
+    <% if project.is_published %>
+        <%= content_tag(:div, content_tag(
+        :a, tag("img", src: project.thumbnail.url), href: work_path(project.displayname)), class: ["thumbnail", "allCat", project.categories.collect { |c| c.name }]) %><!--
+    -->
+    <% end %>
+  <% end %>
 </div>

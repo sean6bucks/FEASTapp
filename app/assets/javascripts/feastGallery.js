@@ -22,7 +22,7 @@ var gallerySlideshow = function(){
     nextSlide.fadeIn(600).addClass('activeSlide');
     
 };
-
 setInterval(gallerySlideshow, 2000);
     
+
 });

@@ -1,6 +1,7 @@
 $(document).ready(function () { 
 
-  $('#nav-icon3').click(function(){
+// ======NAVIGATION MENU=======
+$('#nav-icon3').click(function(){
   $(this).toggleClass('open');
 });
 
@@ -18,6 +19,7 @@ $('#nav-icon3').click(function(){
   }
 });
 
+// ======PAGE SCROLLING===========
 
 $('.jumbotron').click(function(){
   $("html, body").animate({ scrollTop: $('#workBar').offset().top -75 }, 500);
@@ -30,6 +32,8 @@ $('.aboutNav').click(function(){
 $('.contactNav').click(function(){
   $("html, body").animate({ scrollTop: $('#contactBox').offset().top -75 }, 500);
 })
+
+// ====PORTFOLIO SCROLLER =======
 
 var scroller = function(){
    var thumb1 = document.getElementsByClassName("homeThumb1");
@@ -60,6 +64,8 @@ var scroller = function(){
 window.onload = function (){
 
 scroller();
+
+// Resizing of Scroller
 
 $(function() {
     $("#workBar").css("height", function() {
