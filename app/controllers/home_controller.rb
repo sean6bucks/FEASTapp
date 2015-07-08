@@ -13,4 +13,7 @@ class HomeController < ApplicationController
     @project = Project.find_by_displayname(params[:displayname])
   end
 
+  def contact
+  end
+
 end

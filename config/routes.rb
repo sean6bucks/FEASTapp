@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :categories
   get '/work' => 'home#work', as: 'works'
+  get '/contact' => 'home#contact', as: 'contact'
   get '/work/:displayname' => 'home#show', as: 'work'
   get '/admin' => 'admin#index'
 end
