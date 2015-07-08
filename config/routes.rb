@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/contact' => 'home#contact', as: 'contact'
   get '/work/:displayname' => 'home#show', as: 'work'
   get '/admin' => 'admin#index'
+  resources "contacts", only: [:new, :create]
 end

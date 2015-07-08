@@ -11,6 +11,7 @@ gem 'bcrypt'
 gem 'paperclip'
 gem 'simple_form'
 gem 'devise'
+gem 'mail_form'
 
 
 
