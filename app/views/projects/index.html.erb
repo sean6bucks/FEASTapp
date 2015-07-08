@@ -50,7 +50,7 @@
               <%end%>
               <td>
                 <%= link_to "Edit", edit_project_path(proj) %> | 
-                <%= link_to "Delete", edit_user_registration_path(proj), method: :delete,  data: {confirm: "Are you sure you want to delete this project?"} %>
+                <%= link_to "Delete", projectw_path(proj), method: :delete,  data: {confirm: "Are you sure you want to delete this project?"} %>
               </td>
             </tr>
           <% end %>

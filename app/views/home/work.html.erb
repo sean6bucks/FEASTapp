@@ -1,28 +1,33 @@
+
 <%= render '/home/navigation' %>
 <div class="workJumbotron">
-  <% if @first_slide %>
-    <%= content_tag(:a, tag("img", src: @first_slide.jumbotron.url), href: work_path(@first_slide.displayname), class: ["activeSlide"]) %>
-  <% end %>
-  <% @projects.each do |slide| %>
-    <% if slide.is_slide %>
-      <%= content_tag(:a, tag("img", src: slide.jumbotron.url), href: work_path(slide.displayname), class: ["slide"]) %>
+    <% if @projects.first %>
+    <% if @first_slide %>
+      <%= content_tag(:a, tag("img", src: @first_slide.jumbotron.url), href: work_path(@first_slide.displayname), class: ["activeSlide"]) %>
     <% end %>
-  <% end %>
-</div>
-<div class="workCategories">
-  <ul class="catNav">
-    <li id="allCat">All</li>
-    <% @categories.each do |cat| %>
-      <%= content_tag(:li, cat.name, id: [cat.name.to_s]) %>
+    <% @projects.each do |slide| %>
+      <% if slide.is_slide %>
+        <%= content_tag(:a, tag("img", src: slide.jumbotron.url), href: work_path(slide.displayname), class: ["slide"]) %>
+      <% end %>
     <% end %>
-  </ul>
-</div> 
-<div class="gallery">
-  <% @projects.each do |project| %>
-    <% if project.is_published %>
-        <%= content_tag(:div, content_tag(
-        :a, tag("img", src: project.thumbnail.url), href: work_path(project.displayname)), class: ["thumbnail", "allCat", project.categories.collect { |c| c.name }]) %><!--
-    -->
+  </div>
+  <div class="workCategories">
+    <ul class="catNav">
+      <li id="allCat">All</li>
+      <% @categories.each do |cat| %>
+        <%= content_tag(:li, cat.name, id: [cat.name.to_s]) %>
+      <% end %>
+    </ul>
+  </div> 
+  <div class="gallery">
+    <% @projects.each do |project| %>
+      <% if project.is_published %>
+          <%= content_tag(:div, content_tag(
+          :a, tag("img", src: project.thumbnail.url), href: work_path(project.displayname)), class: ["thumbnail", "allCat", project.categories.collect { |c| c.name }]) %><!--
+      -->
+      <% end %>
     <% end %>
+  <% else %>
+    <h1>No Projects Created Yet</h1>
   <% end %>
 </div>
