@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  # before_action :authenticate_user!
-
+  before_action :authenticate_user!
+  layout 'backend'
   def index
     @projects = Project.all
   end
@@ -50,7 +50,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :client, :proccesses, :description, :is_published, :displayname, :thumbnail, :jumbotron, :half_detail1, :half_detail2, :is_slide, :category_ids=>[])
+    params.require(:project).permit(:name, :client, :proccesses, :description, :is_published, :displayname, :thumbnail, :jumbotron, :half_detail1, :half_detail2, :half_detail_square1, :half_detail_square2, :thirds_detail1, :thirds_detail2, :thirds_detail3, :video_url, :is_slide, :category_ids=>[])
   end
 
 end

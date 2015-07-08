@@ -21,13 +21,41 @@
   <%= f.input :displayname, hint: 'Cannot have Uppercase Letters or Spaces',  placeholder: 'projectname', value: :displayname%>
   <%= f.input :thumbnail, label: 'Thumbnail Image', hint: 'thumbnail should be 400 x 400px', as: :file, value: :thumbnail %>
   <%= f.input :jumbotron, label: 'Jumbotron Image', hint: 'Jumbotron image should be 1200 x 720', as: :file %>
-  <input type="checked" name="choice-details" id="choice-half-details">
-  <label for="choice-half-detail">Add Detail Images:</label>
-      
-  <div class="reveal-if-active">
-    <%= f.input :half_detail1, label: 'First Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
-    <%= f.input :half_detail2, label: 'Second Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
+  <br>
+  <input type="checkbox" name="choice-video" id="choice-video">
+  <label for="choice-video">Video Project:</label>
+  <div class="reveal-video-active">
+    <%= f.input :video_url, label: 'Video URL #Number', placeholder: '...vimeo.com/THISNUMBER', value: :video_url %>
   </div>
+  <br>
+  <label>Add Detail Images:</label>
+  <br>
+  <input type="checkbox" name="choice-jumbo" id="choice-jumbotron-details">
+  <label for="choice-jumbotron-details">Jumbotron</label>
+  <div class="reveal-jumbo-active">
+    <%= f.input :jumbotron_detail, label: 'Jumbotron Detail Image', hint: 'Jumbotron image should be 1200 x 720', as: :file %>
+  </div>
+  <input type="checkbox" name="choice-half" id="choice-half-details">
+  <label for="choice-half-details">Half Width</label>
+  <div class="reveal-half-active">
+    <%= f.input :half_detail1, label: 'First Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file, class: 'half-width-uploader' %>
+    <%= f.input :half_detail2, label: 'Second Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file, class: 'half-width-uploader' %>
+  </div>
+  <input type="checkbox" name="choice-half-square" id="choice-half-square-details">
+  <label for="choice-half-square-details">Half Width Square</label>
+  <div class="reveal-half-square-active">
+    <%= f.input :half_detail_square1, label: 'First Half Width Square Detail Images', hint: 'Detail images should be 600 x 600px', as: :file %>
+    <%= f.input :half_detail_square2, label: 'Second Half Width Square Detail Images', hint: 'Detail images should be 600 x 600px', as: :file %>
+  </div>
+
+  <input type="checkbox" name="choice-thirds" id="choice-thirds-details">
+  <label for="choice-thirds-details">Thirds Width</label>
+  <div class="reveal-thirds-active">
+    <%= f.input :thirds_detail1, label: 'First 1/3 Width Detail Images', hint: 'Detail images should be 400 x 600px', as: :file %>
+    <%= f.input :thirds_detail2, label: 'Second 1/3 Width Detail Images', hint: 'Detail images should be 400 x 600px', as: :file %>
+    <%= f.input :thirds_detail3, label: 'Third 1/3 Width Detail Images', hint: 'Detail images should be 400 x 600px', as: :file %>
+  </div>
+  <br>
   <%= f.input :client, placeholder: 'Client\'s Name', value: :client%>
   <%= f.input :proccesses, placeholder: 'Sculpting, Life Casting, etc.', value: :proccesses %>
   <%= f.input :description, placeholder: 'Max. 500 characters', input_html: {maxlength: 500, rows: 5}, as: :text, value: :description %>

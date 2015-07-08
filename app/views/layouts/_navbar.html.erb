@@ -1,0 +1,11 @@
+<div id="navbar">
+  <ul class="footerText">
+    <li class='footerLink' ><%= link_to "Projects", projects_path %></li>
+    <li class='footerLink' ><%= link_to "Categories", categories_path %></li>
+    <li class='footerLink' ><%= link_to "Users", users_path %></li>
+    <% if current_user %>
+      <li class='footerLink' ><%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li>
+    <% else %>
+    <% end %>
+  </ul>
+</div>

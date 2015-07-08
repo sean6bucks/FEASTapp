@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
+
+  layout 'backend'
   def index
     @categories = Category.all
   end

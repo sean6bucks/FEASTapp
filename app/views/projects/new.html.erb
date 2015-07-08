@@ -22,27 +22,30 @@
   <%= f.input :thumbnail, label: 'Thumbnail Image', hint: 'thumbnail should be 400 x 400px', as: :file %>
   <%= f.input :jumbotron, label: 'Jumbotron Image', hint: 'Jumbotron image should be 1200 x 720', as: :file %>
   <br>
+  <input type="checkbox" name="choice-video" id="choice-video">
+  <label for="choice-video">Video Project:</label>
+  <div class="reveal-video-active">
+    <%= f.input :video_url, label: 'Video URL #Number', placeholder: '...vimeo.com/THISNUMBER' %>
+  </div>
+  <br>
   <label>Add Detail Images:</label>
   <br>
   <input type="checkbox" name="choice-jumbo" id="choice-jumbotron-details">
   <label for="choice-jumbotron-details">Jumbotron</label>
   <div class="reveal-jumbo-active">
     <%= f.input :jumbotron_detail, label: 'Jumbotron Detail Image', hint: 'Jumbotron image should be 1200 x 720', as: :file %>
-     <br><br><br><br>
   </div>
   <input type="checkbox" name="choice-half" id="choice-half-details">
   <label for="choice-half-details">Half Width</label>
   <div class="reveal-half-active">
-    <%= f.input :half_detail1, label: 'First Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
-    <%= f.input :half_detail2, label: 'Second Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file %>
-     <br><br><br><br>
+    <%= f.input :half_detail1, label: 'First Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file, class: 'half-width-uploader' %>
+    <%= f.input :half_detail2, label: 'Second Half Width Detail Images', hint: 'Detail images should be 600 x 720px', as: :file, class: 'half-width-uploader' %>
   </div>
   <input type="checkbox" name="choice-half-square" id="choice-half-square-details">
   <label for="choice-half-square-details">Half Width Square</label>
   <div class="reveal-half-square-active">
     <%= f.input :half_detail_square1, label: 'First Half Width Square Detail Images', hint: 'Detail images should be 600 x 600px', as: :file %>
     <%= f.input :half_detail_square2, label: 'Second Half Width Square Detail Images', hint: 'Detail images should be 600 x 600px', as: :file %>
-    <br><br><br><br>
   </div>
 
   <input type="checkbox" name="choice-thirds" id="choice-thirds-details">
@@ -51,7 +54,6 @@
     <%= f.input :thirds_detail1, label: 'First 1/3 Width Detail Images', hint: 'Detail images should be 400 x 600px', as: :file %>
     <%= f.input :thirds_detail2, label: 'Second 1/3 Width Detail Images', hint: 'Detail images should be 400 x 600px', as: :file %>
     <%= f.input :thirds_detail3, label: 'Third 1/3 Width Detail Images', hint: 'Detail images should be 400 x 600px', as: :file %>
-     <br><br><br><br>
   </div>
   <br>
   <%= f.input :client, placeholder: 'Client\'s Name'%>

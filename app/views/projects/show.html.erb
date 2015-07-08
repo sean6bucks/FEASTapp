@@ -5,22 +5,43 @@
 <%= image_tag @project.thumbnail.url(:preview) %>
 <br>
 <h3>Preveiw of Images:</h3>
-<%= image_tag @project.jumbotron.url(:preview) %>
-<br>
-<%= image_tag @project.half_detail1.url(:preview) %>
-<%= image_tag @project.half_detail2.url(:preview) %>
+  <h4>Jumbotron:</h4>
+  <%= image_tag @project.jumbotron.url(:preview) %>
+  <br>
+  <% if @project.video_url %>
+    <h3>Video:</h3>
+    <iframe src=<%= "https://player.vimeo.com/video/#{@project.video_url}" %> width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <% end %>
+  <br>
+  <h4>Detail Images:</h4>
+  <% if @project.jumbotron_detail_file_name %>
+    <%= image_tag @project.jumbotron_detail.url(:preview) %>
+  <% end %>
+  <% if @project.half_detail1_file_name %>
+    <%= image_tag @project.half_detail1.url(:preview) %>
+    <%= image_tag @project.half_detail2.url(:preview) %>
+  <% end %>
+  <% if @project.half_detail_square1_file_name %>
+    <%= image_tag @project.half_detail_square1.url(:preview) %>
+    <%= image_tag @project.half_detail_square2.url(:preview) %>
+  <% end %>
+  <% if @project.thirds_detail1_file_name %>
+    <%= image_tag @project.thirds_detail1.url(:preview) %>
+    <%= image_tag @project.thirds_detail2.url(:preview) %>
+    <%= image_tag @project.thirds_detail3.url(:preview) %>
+  <% end %>
 <h3>Proccesses:</h3>
-<h4><%= @project.proccesses %></h4> 
+  <h4><%= @project.proccesses %></h4> 
 <br>
 <h3>Description:</h3>
-<p><%= @project.description %></p>
+  <p><%= @project.description %></p>
 <br>
 <h3>Categories:</h3>
-<ul>
-<% @project.categories.each do |c| %>
-    <li><h5><%= c.name %></h5></li>
-<% end %>
-</ul>
+  <ul>
+  <% @project.categories.each do |c| %>
+      <li><h5><%= c.name %></h5></li>
+  <% end %>
+  </ul>
 <br>
 <h3>Options:</h3>
 <% if @project.is_published %>
