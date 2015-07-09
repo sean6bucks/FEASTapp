@@ -59,15 +59,18 @@ table {
   border-spacing: 0;
 }
 // ======== Personal CSS ====
-body {
+html, body {
   position: relative;
   overflow-x: hidden;
   background-color: #222; 
   font-family: 'Lato', Helvetica, Arial, sans-serif;
+  height: 100%;
 }
 
 #bodyColumn {
   width: 100%;
+  min-height: 100%;
+  margin-bottom: -50px;
   overflow: hidden;
   min-width: 800px;
 }
@@ -216,11 +219,12 @@ hr {
 
 
 // ==== FOOTER ====
-
-
-#footer, #navbar {
-  background: #f8f8f8;
+#footer, #bodyColumn:after {
   height: 50px;
+}
+
+#footer {
+  background: #f8f8f8;
   width: 100%;
   clear: both;
 }
@@ -248,4 +252,8 @@ hr {
 
 .spacer {
   height: 50px;
+}
+
+#cmsWrapper {
+  margin: 50px  50px;
 }

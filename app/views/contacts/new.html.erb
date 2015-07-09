@@ -1,10 +1,13 @@
-<div align="center">
+<%= render '/home/navigation' %>
+<div id="cmsWrapper">
+<div class="col-md-3 col-xs-3"></div>
+<div id="contactForm" align="center" class="col-md-6 col-xs-6">
   <h3>Have a project in mind? Or just a question?</h3>
 
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :message, :as => :text, :required => true %>
+    <%= f.input :name, :required => true, placeholder: "Name", class: 'contactInput' %>
+    <%= f.input :email, :required => true, placeholder: "Email", class: 'contactInput' %>
+    <%= f.input :message, :as => :text, placeholder: "Whats on your mind?", :required => true %>
     <div class= "hidden">
       <%= f.input :nickname, :hint => 'Leave this field blank!' %>
     </div>
@@ -13,4 +16,6 @@
       <%= f.button :submit, 'Send Message', :class=> "btn btn-primary" %>
     </div>
   <% end %>
+</div>
+<div class="col-md-2 col-xs-2"></div>
 </div>

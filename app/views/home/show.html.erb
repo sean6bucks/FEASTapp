@@ -20,33 +20,33 @@
       <%= @project.description %>
     </p>
   </div>
-  <% if @project.video_url %>
+  <% if @project.video_url != '' %>
     <div class='projectJumbotron'>
       <iframe src=<%= "https://player.vimeo.com/video/#{@project.video_url}" %> height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
   <% end %>
   <% if @project.jumbotron_detail_file_name %>
   <div class="projectJumbotron">
-    <%= image_tag @project.jumbotron_detail.url(:preview) %>
+    <%= image_tag @project.jumbotron_detail.url %>
   </div>
   <% end %>
   <% if @project.half_detail1_file_name %>
   <div class="projectHalfDetails">
-    <%= image_tag @project.half_detail1.url(:preview) %><!--
-    --><%= image_tag @project.half_detail2.url(:preview) %>
+    <%= image_tag @project.half_detail1.url %><!--
+    --><%= image_tag @project.half_detail2.url %>
   </div>
   <% end %>
   <% if @project.half_detail_square1_file_name %>
   <div class="projectHalfDetails">
-    <%= image_tag @project.half_detail_square1.url(:preview) %><!--
-    --><%= image_tag @project.half_detail_square2.url(:preview) %>
+    <%= image_tag @project.half_detail_square1.url %><!--
+    --><%= image_tag @project.half_detail_square2.url %>
   </div>
   <% end %>
   <% if @project.thirds_detail1_file_name %>
   <div class="projectThreeDetails">
-    <%= image_tag @project.thirds_detail1.url(:preview) %><!--
-    --><%= image_tag @project.thirds_detail2.url(:preview) %><!--
-    --><%= image_tag @project.thirds_detail3.url(:preview) %>
+    <%= image_tag @project.thirds_detail1.url %><!--
+    --><%= image_tag @project.thirds_detail2.url %><!--
+    --><%= image_tag @project.thirds_detail3.url %>
   </div>
   <% end %>
   <div class="projectInfo">
@@ -62,7 +62,7 @@
   <div class="projectNav">
     <p>
       <a href='#'>&#8592;Prev</a>
-      - <a href='feastWork.html'>All Projects</a> -
+      - <%= link_to "All Projects", works_path %> -
       <a href='#'>Next&#8594;</a>
     </p>
   </div>

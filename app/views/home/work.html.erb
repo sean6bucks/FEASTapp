@@ -2,11 +2,11 @@
 <%= render '/home/navigation' %>
 <div class="workJumbotron">
     <% if @projects.first %>
-    <% if @first_slide %>
+    <% if @first_slide.is_published %>
       <%= content_tag(:a, tag("img", src: @first_slide.jumbotron.url), href: work_path(@first_slide.displayname), class: ["activeSlide"]) %>
     <% end %>
     <% @projects.each do |slide| %>
-      <% if slide.is_slide %>
+      <% if slide.is_slide && slide.is_published %>
         <%= content_tag(:a, tag("img", src: slide.jumbotron.url), href: work_path(slide.displayname), class: ["slide"]) %>
       <% end %>
     <% end %>

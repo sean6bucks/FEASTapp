@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   def work
     @projects = Project.all.reverse_order
     @categories = Category.all
-    @first_slide = Project.find_by_is_slide(true)
+    @first_slide = Project.find_by_is_published_and_is_slide(true, true)
   end
 
   def show
