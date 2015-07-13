@@ -44,4 +44,6 @@ class Project < ActiveRecord::Base
   has_attached_file :thirds_detail3, :styles => { :thirds_detail3 => "400x600>", :preview => "600x360>" }, :default_url => ":style/missingjumbotron.jpeg"
   validates_attachment_content_type :thirds_detail3, :content_type => /\Aimage\/.*\Z/
 
+  scope :published, -> { where(is_published: true)}
+
 end

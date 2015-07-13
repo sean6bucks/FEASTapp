@@ -61,9 +61,13 @@
   </div>
   <div class="projectNav">
     <p>
-      <a href='#'>&#8592;Prev</a>
+      <% if @previous %>
+        <%= link_to "&#8592;Prev".html_safe, work_path(@previous.displayname) %>
+      <% end %>
       - <%= link_to "All Projects", works_path %> -
-      <a href='#'>Next&#8594;</a>
+      <% if @next %>
+        <%= link_to "Next&#8594;".html_safe, @next %>
+      <% end %>
     </p>
   </div>
 <% end %>

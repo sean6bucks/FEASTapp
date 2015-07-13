@@ -7,7 +7,7 @@
     <%= link_to "Contact", new_contact_path, class: 'footerLink' %>
     <li class='footerLink' ><a href="#">Blog</a></li>
     <% if current_user %>
-      <li class='footerLink' ><%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li>
+      <li class='footerLink' ><%= link_to "CMS", admin_path %></li>
     <% else %>
       <li class='footerLink' ><%= link_to "Sign In", login_path %></li>
     <% end %>

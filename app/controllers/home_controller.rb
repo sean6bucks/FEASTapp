@@ -10,7 +10,12 @@ class HomeController < ApplicationController
   end
 
   def show
+    @published_project_ids = Project.published.pluck(:id)
+    
     @project = Project.find_by_displayname(params[:displayname])
+    @previous = Project.where("id < ?", params[:id]).order(:id).first   
+    @next = Project.where("id > ?", params[:id]).order(:id).first 
+    
   end
 
   def contact
